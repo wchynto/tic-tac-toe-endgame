@@ -1,0 +1,1285 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Klasifikasi Hasil Akhir Permainan Tic Tac Toe &#8212; Klasifikasi Hasil Akhir Permainan Tic Tac Toe</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'main';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Klasifikasi Hasil Akhir Permainan Tic Tac Toe - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Klasifikasi Hasil Akhir Permainan Tic Tac Toe - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Klasifikasi Hasil Akhir Permainan Tic Tac Toe
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmain.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/main.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Klasifikasi Hasil Akhir Permainan Tic Tac Toe</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ambil-data-dari-sumber-data">Ambil data dari sumber data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset">Informasi Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-class">Perbandingan class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-data-duplikat">Cek data duplikat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-missing-values">Cek missing values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-outlayer">Cek Outlayer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encode-data">Encode data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-korelasi-data">Cek korelasi data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling">Modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data">Split data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-stacking">Modelling With Stacking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-bagging">Modelling with Bagging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-random-forest">Modelling with Random Forest</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi">Evaluasi</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="klasifikasi-hasil-akhir-permainan-tic-tac-toe">
+<h1>Klasifikasi Hasil Akhir Permainan Tic Tac Toe<a class="headerlink" href="#klasifikasi-hasil-akhir-permainan-tic-tac-toe" title="Link to this heading">#</a></h1>
+<p>Dalam tugas ini, kita akan melakukan analisis dan permodelan klasifikasi terkait dataset permainan tic tac toe yang bertujuan untuk menemukan pola dan korelasi antar fitur untuk mempredikasi hasil. Sehingga, dapat membantu mengambil keputusan yang lebih baik.</p>
+<p>Dataset : <a class="reference external" href="https://archive.ics.uci.edu/dataset/101/tic+tac+toe+endgame">https://archive.ics.uci.edu/dataset/101/tic+tac+toe+endgame</a></p>
+<p><strong>Informasi Tambahan</strong></p>
+<p>Dataset ini mengkodekan set lengkap konfigurasi papan yang mungkin di akhir permainan tic-tac-toe, di mana “x” diasumsikan telah bermain terlebih dahulu.  Konsep targetnya adalah “menang untuk x” (yaitu, benar ketika “x” memiliki salah satu dari 8 cara yang memungkinkan untuk membuat “tiga-dalam-baris”).</p>
+<p>Menariknya, basis data mentah ini memberikan algoritma pohon keputusan yang dipreteli (misalnya, ID3) yang cocok.  Namun, algoritma CN2 berbasis aturan, algoritma pembelajaran berbasis contoh IB1 yang sederhana, dan algoritma pohon keputusan yang membangun fitur CITRE bekerja dengan baik di dalamnya.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %pip install ucimlrepo</span>
+<span class="c1"># %pip install pandas</span>
+<span class="c1"># %pip install matplotlib</span>
+<span class="c1"># %pip install seaborn</span>
+<span class="c1"># %pip instal scikit-learn</span>
+<span class="c1"># %pip install plotly-express</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ucimlrepo</span> <span class="kn">import</span> <span class="n">fetch_ucirepo</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">StackingClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingClassifier</span>  
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">call</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">joblib</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-understanding">
+<h2>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h2>
+<p>Data yang digunakan merupakan dataset dari University of California (UCI) yang menyediakan banyak dataset yang siap digunakan untuk pembelajaran ataupun penelitian. Salah satu data yang dari UCI yang kami gunakan adalah dataset <strong>Tic-Tac-Toe Endgame</strong>. Dataset ini kami gunakan karena sesuai dengan topik dan kasus yang kami ambil.</p>
+<p><strong>Informasi Dataset</strong></p>
+<ul class="simple">
+<li><p>x = Simbol atau pola ‘X’</p></li>
+<li><p>o = Simbol atau pola ‘O’</p></li>
+<li><p>b = Blank atau kosong</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>top-left-square: {x,o,b}</p></li>
+<li><p>top-middle-square: {x,o,b}</p></li>
+<li><p>top-right-square: {x,o,b}</p></li>
+<li><p>middle-left-square: {x,o,b}</p></li>
+<li><p>middle-middle-square: {x,o,b}</p></li>
+<li><p>middle-right-square: {x,o,b}</p></li>
+<li><p>bottom-left-square: {x,o,b}</p></li>
+<li><p>bottom-middle-square: {x,o,b}</p></li>
+<li><p>bottom-right-square: {x,o,b}</p></li>
+<li><p>Class: {positive,negative}</p></li>
+</ol>
+<section id="ambil-data-dari-sumber-data">
+<h3>Ambil data dari sumber data<a class="headerlink" href="#ambil-data-dari-sumber-data" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ambil data dari UCI Repository</span>
+<span class="n">tic_tac_toe_endgame</span> <span class="o">=</span> <span class="n">fetch_ucirepo</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">101</span><span class="p">)</span> 
+
+<span class="c1"># Ambil features dan targets</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tic_tac_toe_endgame</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">features</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">tic_tac_toe_endgame</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">targets</span> 
+
+<span class="c1"># Gabungkan features dan targets</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>top-left-square</th>
+      <th>top-middle-square</th>
+      <th>top-right-square</th>
+      <th>middle-left-square</th>
+      <th>middle-middle-square</th>
+      <th>middle-right-square</th>
+      <th>bottom-left-square</th>
+      <th>bottom-middle-square</th>
+      <th>bottom-right-square</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>o</td>
+      <td>o</td>
+      <td>x</td>
+      <td>o</td>
+      <td>o</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>x</td>
+      <td>o</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>x</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>b</td>
+      <td>b</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>o</td>
+      <td>o</td>
+      <td>b</td>
+      <td>o</td>
+      <td>b</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>o</td>
+      <td>o</td>
+      <td>b</td>
+      <td>b</td>
+      <td>o</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>o</td>
+      <td>b</td>
+      <td>o</td>
+      <td>o</td>
+      <td>b</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>o</td>
+      <td>b</td>
+      <td>o</td>
+      <td>b</td>
+      <td>o</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>o</td>
+      <td>b</td>
+      <td>b</td>
+      <td>o</td>
+      <td>o</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>b</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>b</td>
+      <td>positive</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="informasi-dataset">
+<h3>Informasi Dataset<a class="headerlink" href="#informasi-dataset" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># informasi dataset</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 958 entries, 0 to 957
+Data columns (total 10 columns):
+ #   Column                Non-Null Count  Dtype 
+---  ------                --------------  ----- 
+ 0   top-left-square       958 non-null    object
+ 1   top-middle-square     958 non-null    object
+ 2   top-right-square      958 non-null    object
+ 3   middle-left-square    958 non-null    object
+ 4   middle-middle-square  958 non-null    object
+ 5   middle-right-square   958 non-null    object
+ 6   bottom-left-square    958 non-null    object
+ 7   bottom-middle-square  958 non-null    object
+ 8   bottom-right-square   958 non-null    object
+ 9   class                 958 non-null    object
+dtypes: object(10)
+memory usage: 75.0+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dalam output program diatas dapat dilihat bahwa dataset memiliki Kolom sebanyak delapan kolom jika dihitung dari indeks satu, termasuk dalam tujuh fitur dan satu class. jumlah data sebanyak 958 data yang tidak memiliki missing value.</p>
+<p><strong>Tipe Data Kolom</strong></p>
+<ul class="simple">
+<li><p>top-left-square = categorical</p></li>
+<li><p>top-middle-square = categorical</p></li>
+<li><p>top-right-square = categorical</p></li>
+<li><p>middle-left-square = categorical</p></li>
+<li><p>middle-middle-square = categorical</p></li>
+<li><p>botttom-left-square = categorical</p></li>
+<li><p>bottom-middle-square = categorical</p></li>
+<li><p>bottom-right-square = categorical</p></li>
+<li><p>class = categorical</p></li>
+</ul>
+</section>
+<section id="perbandingan-class">
+<h3>Perbandingan class<a class="headerlink" href="#perbandingan-class" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># plot perbandingan class</span>
+<span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;class&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/0cf7ce33d99297b8397da81fefcb8a543eb65d3732e13a6ec62709ecbe9a2794.png" src="_images/0cf7ce33d99297b8397da81fefcb8a543eb65d3732e13a6ec62709ecbe9a2794.png" />
+</div>
+</div>
+<p>Dalam grafik diatas dapat disimpulkan bahwa dataset ini memiliki class yang imbalance, dimana class ‘positive’ memiliki jumlah yang lebih banyak dibandingkan class ‘negative’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># positive = df[df[&#39;class&#39;] == &#39;positive&#39;].sample(332)</span>
+<span class="c1"># negative = df[df[&#39;class&#39;] == &#39;negative&#39;]</span>
+
+<span class="c1"># df = pd.concat([positive, negative])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># target = df.columns[-1]</span>
+
+<span class="c1"># # plot perbandingan class</span>
+<span class="c1"># df[target].value_counts().plot(kind=&#39;bar&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cek-data-duplikat">
+<h3>Cek data duplikat<a class="headerlink" href="#cek-data-duplikat" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dataset yang digunakan tidak memiliki data duplikat</p>
+</section>
+<section id="cek-missing-values">
+<h3>Cek missing values<a class="headerlink" href="#cek-missing-values" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>top-left-square         0
+top-middle-square       0
+top-right-square        0
+middle-left-square      0
+middle-middle-square    0
+middle-right-square     0
+bottom-left-square      0
+bottom-middle-square    0
+bottom-right-square     0
+class                   0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dari output program diatas. dipastika bahwa dataset tidak memiliki missing value dari setiap fiturnya.</p>
+</section>
+<section id="cek-outlayer">
+<h3>Cek Outlayer<a class="headerlink" href="#cek-outlayer" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check missing value with boxplot</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">target</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a4c521c89b81cb428bfc664d5b2688a1dcefd9113af4c3eb56c1633a72d03fe5.png" src="_images/a4c521c89b81cb428bfc664d5b2688a1dcefd9113af4c3eb56c1633a72d03fe5.png" />
+</div>
+</div>
+<p>Berdasarkan grafik boxplot diatas dapat disimpulkan bahwa setiap fitur dari dataset tidak memiliki outlier, karena tidak ada yang tidak melebihi nilai batas maksimal.</p>
+</section>
+</section>
+<section id="pre-processing">
+<h2>Pre-processing<a class="headerlink" href="#pre-processing" title="Link to this heading">#</a></h2>
+<section id="encode-data">
+<h3>Encode data<a class="headerlink" href="#encode-data" title="Link to this heading">#</a></h3>
+<p>Encode data harus dilakukan karena dataset dan semua fitur memiliki tipe data katagorik. karena itu encode harus dilakukan untuk mempermudah modelling.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">le_x</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;top-left-square&#39;</span><span class="p">])</span>
+<span class="n">le_y</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">])</span>
+
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">le_x</span><span class="p">,</span> <span class="s1">&#39;feature_encoder.pkl&#39;</span><span class="p">)</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">le_y</span><span class="p">,</span> <span class="s1">&#39;target_encoder.pkl&#39;</span><span class="p">)</span>
+
+<span class="n">encoded_df_x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;class&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">le_x</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">encoded_df_y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">le_y</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">x</span><span class="p">])[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">encoded_df</span> <span class="o">=</span> <span class="n">encoded_df_x</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">encoded_df_y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Before encode&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">x</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;After encode&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">encoded_df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">x</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Before encode
+
+top-left-square                    [x, o, b]
+top-middle-square                  [x, o, b]
+top-right-square                   [x, o, b]
+middle-left-square                 [x, o, b]
+middle-middle-square               [o, b, x]
+middle-right-square                [o, b, x]
+bottom-left-square                 [x, o, b]
+bottom-middle-square               [o, x, b]
+bottom-right-square                [o, x, b]
+class                   [positive, negative]
+dtype: object
+
+After encode
+
+top-left-square         [2, 1, 0]
+top-middle-square       [2, 1, 0]
+top-right-square        [2, 1, 0]
+middle-left-square      [2, 1, 0]
+middle-middle-square    [1, 0, 2]
+middle-right-square     [1, 0, 2]
+bottom-left-square      [2, 1, 0]
+bottom-middle-square    [1, 2, 0]
+bottom-right-square     [1, 2, 0]
+class                      [1, 0]
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cek-korelasi-data">
+<h3>Cek korelasi data<a class="headerlink" href="#cek-korelasi-data" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check correlation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">encoded_df</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/2e8bd679edd076572f1837ff385e8fd684b069bb03fd28cb0954702267147ac5.png" src="_images/2e8bd679edd076572f1837ff385e8fd684b069bb03fd28cb0954702267147ac5.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="modelling">
+<h2>Modelling<a class="headerlink" href="#modelling" title="Link to this heading">#</a></h2>
+<section id="split-data">
+<h3>Split data<a class="headerlink" href="#split-data" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split data</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">encoded_df_x</span><span class="p">,</span> <span class="n">encoded_df_y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">df_train</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">df_test</span> <span class="o">=</span> <span class="n">x_test</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+
+<span class="c1"># df_train.head()</span>
+<span class="c1"># df_test.head()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelling-with-stacking">
+<h3>Modelling With Stacking<a class="headerlink" href="#modelling-with-stacking" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">estimator</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;knn_n3&#39;</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;knn_n5&#39;</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;nb&#39;</span><span class="p">,</span> <span class="n">GaussianNB</span><span class="p">())</span>
+<span class="p">]</span>
+
+<span class="n">stacking_clf</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span>
+  <span class="n">estimators</span><span class="o">=</span><span class="n">estimator</span><span class="p">,</span>
+  <span class="n">final_estimator</span><span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="n">stacking_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">predict</span> <span class="o">=</span> <span class="n">stacking_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">predict_transform</span> <span class="o">=</span> <span class="n">le_y</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">predict</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Predict: </span><span class="si">{</span><span class="n">predict_transform</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">predict</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predict: [&#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;negative&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39;]
+
+Accuracy: 0.9947916666666666
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">stacking_clf</span><span class="p">,</span> <span class="s1">&#39;stacking_model.pkl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;stacking_model.pkl&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelling-with-bagging">
+<h3>Modelling with Bagging<a class="headerlink" href="#modelling-with-bagging" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">estimators</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">(</span><span class="s1">&#39;knn_n3&#39;</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)),</span>
+  <span class="p">(</span><span class="s1">&#39;knn_n5&#39;</span><span class="p">,</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)),</span>
+  <span class="p">(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)),</span>
+  <span class="p">(</span><span class="s1">&#39;nb&#39;</span><span class="p">,</span> <span class="n">GaussianNB</span><span class="p">())</span>
+<span class="p">]</span>
+
+<span class="n">bagging_clf</span> <span class="o">=</span> <span class="n">BaggingClassifier</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(),</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+
+<span class="n">bagging_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">predict</span> <span class="o">=</span> <span class="n">bagging_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">predict_transform</span> <span class="o">=</span> <span class="n">le_y</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">predict</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Predict: </span><span class="si">{</span><span class="n">predict_transform</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">predict</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predict: [&#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;negative&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;]
+
+Accuracy: 0.90625
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelling-with-random-forest">
+<h3>Modelling with Random Forest<a class="headerlink" href="#modelling-with-random-forest" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="s1">&#39;randforest_clf.pkl&#39;</span><span class="p">)</span>
+
+<span class="n">predict</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">predict_transform</span> <span class="o">=</span> <span class="n">le_y</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">predict</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Predict: </span><span class="si">{</span><span class="n">predict_transform</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">predict</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predict: [&#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;negative&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;negative&#39;
+ &#39;positive&#39; &#39;positive&#39; &#39;negative&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39;
+ &#39;negative&#39; &#39;positive&#39; &#39;negative&#39; &#39;positive&#39; &#39;positive&#39; &#39;positive&#39;]
+
+Accuracy: 0.9427083333333334
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">estimator</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">estimators_</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="n">export_graphviz</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> 
+                <span class="n">out_file</span><span class="o">=</span><span class="s1">&#39;tree.dot&#39;</span><span class="p">,</span> 
+                <span class="n">feature_names</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;negative&#39;</span><span class="p">,</span> <span class="s1">&#39;positive&#39;</span><span class="p">],</span>
+                <span class="n">rounded</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">proportion</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> 
+                <span class="n">precision</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">filled</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">call</span><span class="p">([</span><span class="s1">&#39;dot&#39;</span><span class="p">,</span> <span class="s1">&#39;-Tpng&#39;</span><span class="p">,</span> <span class="s1">&#39;tree.dot&#39;</span><span class="p">,</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;tree.png&#39;</span><span class="p">,</span> <span class="s1">&#39;-Gdpi=600&#39;</span><span class="p">])</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;tree.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dot: graph is too large for cairo-renderer bitmaps. Scaling by 0.451828 to fit
+</pre></div>
+</div>
+<img alt="_images/293010470287bae9ef0980bdd58e5ff27387143557a66be05db0937fc4b7fe79.png" src="_images/293010470287bae9ef0980bdd58e5ff27387143557a66be05db0937fc4b7fe79.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="evaluasi">
+<h2>Evaluasi<a class="headerlink" href="#evaluasi" title="Link to this heading">#</a></h2>
+<p>Berdasarkan hasi modelling, bisa dipastikan bahwa metode stacking memiliki akurasi paling tinggi, karena itu metode ini dipilih sebagai model terbaik</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># accuracy score</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">stacking_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="c1"># classification report</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+
+<span class="c1"># confusion matrix</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">hm</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="n">le_y</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">le_y</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">hm</span> <span class="o">=</span> <span class="n">hm</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99        67
+           1       1.00      0.99      1.00       125
+
+    accuracy                           0.99       192
+   macro avg       0.99      1.00      0.99       192
+weighted avg       0.99      0.99      0.99       192
+</pre></div>
+</div>
+<img alt="_images/81214a993c9ecee1aeb0053ec130114c4f1ad43ede1713c1081a0032eb382630.png" src="_images/81214a993c9ecee1aeb0053ec130114c4f1ad43ede1713c1081a0032eb382630.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ambil-data-dari-sumber-data">Ambil data dari sumber data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset">Informasi Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-class">Perbandingan class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-data-duplikat">Cek data duplikat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-missing-values">Cek missing values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-outlayer">Cek Outlayer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encode-data">Encode data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-korelasi-data">Cek korelasi data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling">Modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data">Split data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-stacking">Modelling With Stacking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-bagging">Modelling with Bagging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-random-forest">Modelling with Random Forest</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi">Evaluasi</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Wahyu Cahyanto Bayu Agung
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
